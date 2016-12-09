@@ -14,7 +14,7 @@
     "tsc:w": "tsc -w"
   },
   "keywords": [],
-  "author": "",
+  "author": "jonathan",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "~2.3.0",
@@ -55,5 +55,6 @@
     "typescript": "~2.0.10",
     "webdriver-manager": "10.2.5"
   },
-  "repository": {}
+  "repository": {},
+  "main": "gulpfile.js"
 }
