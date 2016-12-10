@@ -18,7 +18,7 @@ gulp.task("resources", ["server", "app", "assets"], function() {
 });
 /* copy the app core files to the build folder */
 gulp.task("app", ['index'], function() {
-    return gulp.src(["app/**", "!app/**/*.ts", "!app/**/*.map.js"])
+    return gulp.src(["app/**", "!app/**/*.ts"])
         .pipe(gulp.dest("build/app"));
 });
 /* get the index file to the root of the build */
