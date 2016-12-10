@@ -46,15 +46,27 @@ gulp.task("libs", function() {
             'angular2/bundles/angular2-polyfills.js',
             'angular2/es6/dev/src/testing/shims_for_IE.js',
             'systemjs/dist/system.src.js',
-            'rxjs/bundles/Rx.js',
+            'rxjs/**',
             'angular2/bundles/angular2.dev.js',
-            'angular2/bundles/router.dev.js'
+            'angular2/bundles/router.dev.js',
+            'core-js/client/shim.min.js',
+            'zone.js/**',
+            'reflect-metadata/Reflect.js',
+            'systemjs.config.js',
+            '@angular/**'
         ], { cwd: "node_modules/**" }) /* Glob required here. */
         .pipe(gulp.dest("build/node_modules"));
+});
+
+gulp.task("libs2", function() {
+    return gulp.src([
+            'systemjs.config.js'
+        ]) /* Glob required here. */
+        .pipe(gulp.dest("build"));
 });
 /**
  * Build the project.
  */
-gulp.task("default", ['resources', 'libs'], function() {
+gulp.task("default", ['resources', 'libs', 'libs2'], function() {
     console.log("Building the project ...");
 });
